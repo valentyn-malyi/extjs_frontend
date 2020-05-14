@@ -5,19 +5,7 @@
     "framework": "ext",
     "toolkit": "classic",
     "theme": "theme-triton",
-
-    /**
-     * The list of required packages (with optional versions; default is "latest").
-     *
-     * For example,
-     *
-     *      "requires": [
-     *          "charts"
-     *      ]
-     */
-    "requires": [
-        "font-awesome"
-    ],
+    "requires": [],
 
     /**
      * The relative path to the application's markup file (html, jsp, asp, etc.).

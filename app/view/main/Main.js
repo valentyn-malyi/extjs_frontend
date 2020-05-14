@@ -15,7 +15,8 @@ Ext.define('a.view.main.Main', {
 
         'a.view.main.MainController',
         'a.view.main.MainModel',
-        'a.view.main.List'
+
+        'a.view.main.list.List'
     ],
 
     controller: 'main',
@@ -79,7 +80,7 @@ Ext.define('a.view.main.Main', {
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'mainList'
         }]
     }, {
         title: 'Users',
