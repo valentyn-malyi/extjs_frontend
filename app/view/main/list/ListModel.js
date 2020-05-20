@@ -1,15 +1,19 @@
-Ext.define('a.view.main.list.ListModel', {
-  extend: 'Ext.app.ViewModel',
-  alias: 'viewmodel.mainList',
+Ext.define("a.view.main.list.ListModel", {
+  extend: "Ext.app.ViewModel",
+  alias: "viewmodel.mainList",
 
   requires: [
-    'a.store.Personnel'
+    "a.model.Personnel"
   ],
 
   stores: {
     personnelStore: {
-      type: 'personnel'
+      model: "a.model.Personnel",
+      autoLoad: true
     }
   },
 
+  data: {
+    thisis: "bla bal"
+  }
 });

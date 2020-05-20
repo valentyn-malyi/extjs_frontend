@@ -7,22 +7,53 @@ Ext.define('a.view.main.list.List', {
     'a.view.main.list.ListModel',
   ],
 
+  plugins: {
+    cellediting: {
+      clicksToEdit: 2
+    }
+  },
+
   controller: 'mainList',
   viewModel: 'mainList',
 
+  defaults: {
+    collapsible: true,
+    split: true,
+    bodyPadding: 0
+  },
+
   columns: [
-    {text: 'Name', dataIndex: 'name'},
-    {text: 'Email', dataIndex: 'email', flex: 1},
-    {text: 'Phone', dataIndex: 'phone', flex: 1}
+    {
+      text: 'Name',
+      dataIndex: 'name',
+      editor: {
+        xtype: 'textfield',
+        allowBlank: false
+      }
+    },
+    {
+      text: 'Email',
+      dataIndex: 'email',
+      flex: 1,
+      editor: {
+        xtype: 'textfield',
+        allowBlank: false
+      }
+    },
+    {
+      text: 'Phone',
+      dataIndex: 'phone',
+      flex: 1,
+      editor: {
+        xtype: 'textfield',
+        allowBlank: false
+      }
+    }
   ],
 
   title: 'Personnel',
 
   bind: {
     store: "{personnelStore}"
-  },
-
-  listeners: {
-    select: 'onItemSelected'
   }
 });
