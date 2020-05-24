@@ -9,6 +9,11 @@ Ext.define('a.view.main.book.Book', {
 
   controller: 'mainBook',
   viewModel: 'mainBook',
+  title: 'Books',
+
+  bind: {
+    store: "{bookStore}"
+  },
 
   defaults: {
     collapsible: true,
@@ -31,11 +36,5 @@ Ext.define('a.view.main.book.Book', {
         allowBlank: false
       }
     }
-  ],
-
-  title: 'Books',
-
-  bind: {
-    store: "{bookStore}"
-  }
+  ]
 });

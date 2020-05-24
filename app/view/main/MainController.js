@@ -20,5 +20,15 @@ Ext.define('a.view.main.MainController', {
         }
       }
     )
+  },
+
+  onTabchange: function (tabPanel, newCard) {
+    if (tabPanel.lookupReference("mainListTab") === newCard) {
+      mainListItem = newCard.lookupReference("mainListItem")
+      window.aa = mainListItem
+      bookStore = newCard.lookupReference("mainListItem").getViewModel().getStore("bookStore")
+      bookStore.load()
+      mainListItem.getView().refresh()
+    }
   }
 });

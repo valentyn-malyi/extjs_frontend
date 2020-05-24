@@ -1,6 +1,7 @@
 Ext.define('a.view.main.Main', {
   extend: 'Ext.tab.Panel',
   xtype: 'app-main',
+  referenceHolder: true,
 
   requires: [
     'Ext.plugin.Viewport',
@@ -15,6 +16,10 @@ Ext.define('a.view.main.Main', {
 
   controller: 'main',
   viewModel: 'main',
+
+  listeners: {
+    tabchange: "onTabchange"
+  },
 
   ui: 'navigation',
 
@@ -71,13 +76,20 @@ Ext.define('a.view.main.Main', {
 
   items: [
     {
+      itemId: "tabmainList",
       title: 'Users',
+      reference: "mainListTab",
       iconCls: 'fa-user',
+      referenceHolder: true,
       items: [
         {
           xtype: 'mainList',
+          reference: "mainListItem",
           listeners: {
             edit: "onEditName"
+          },
+          bind: {
+            store: "{personnelStore}"
           }
         }
       ]

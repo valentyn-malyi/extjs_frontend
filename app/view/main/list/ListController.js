@@ -4,7 +4,18 @@ Ext.define("a.view.main.list.ListController", {
 
   bookRenderer: function (value) {
     bookStore = this.getViewModel().getStore("bookStore")
+    bookStore.reload()
     book = bookStore.getById(value)
     return book ? book.get("name") : "Not found book"
+  },
+
+  showBooks: function () {
+    bookStore = this.getViewModel().getStore("bookStore")
+    columnBook = this.getView().getColumns()[3]
+    bookStore.load({
+      callback: function () {
+        columnBook.setHidden(false)
+      }
+    })
   }
 })

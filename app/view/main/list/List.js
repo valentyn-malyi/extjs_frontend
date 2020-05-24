@@ -13,10 +13,15 @@ Ext.define('a.view.main.list.List', {
     }
   },
 
+  listeners: {
+    beforerender: "showBooks",
+    refreshBooks : function () {
+      console.log("refresh")
+    }
+  },
+
   controller: 'mainList',
   viewModel: 'mainList',
-  reference: 'mainList',
-
   title: 'Personnel',
 
   bind: {
@@ -58,11 +63,14 @@ Ext.define('a.view.main.list.List', {
       text: 'Book',
       dataIndex: 'book_id',
       flex: 1,
+      reference: "bookColumn",
+      hidden: true,
       editor: {
         hideLabel: true,
         xtype: "combo",
         valueField: 'id',
         editable: false,
+        allowBlank: false,
         bind: {
           store: "{bookStore}"
         },
