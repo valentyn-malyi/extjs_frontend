@@ -10,10 +10,10 @@ Ext.define("a.view.main.list.ListModel", {
     personnelStore: {
       model: "a.model.Personnel",
       autoLoad: true
+    },
+    bookStore: {
+      model: "a.model.Book",
+      autoLoad: true
     }
-  },
-
-  data: {
-    thisis: "bla bal"
   }
 });

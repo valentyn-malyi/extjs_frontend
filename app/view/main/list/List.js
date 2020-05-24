@@ -15,10 +15,15 @@ Ext.define('a.view.main.list.List', {
 
   controller: 'mainList',
   viewModel: 'mainList',
+  reference: 'mainList',
+
+  title: 'Personnel',
+
+  bind: {
+    store: "{personnelStore}"
+  },
 
   defaults: {
-    collapsible: true,
-    split: true,
     bodyPadding: 0
   },
 
@@ -48,12 +53,23 @@ Ext.define('a.view.main.list.List', {
         xtype: 'textfield',
         allowBlank: false
       }
+    },
+    {
+      text: 'Book',
+      dataIndex: 'book_id',
+      flex: 1,
+      editor: {
+        hideLabel: true,
+        xtype: "combo",
+        valueField: 'id',
+        editable: false,
+        bind: {
+          store: "{bookStore}"
+        },
+        queryMode: 'remote',
+        displayField: "name",
+      },
+      renderer: "bookRenderer"
     }
-  ],
-
-  title: 'Personnel',
-
-  bind: {
-    store: "{personnelStore}"
-  }
+  ]
 });

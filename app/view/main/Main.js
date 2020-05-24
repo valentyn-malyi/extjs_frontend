@@ -77,7 +77,7 @@ Ext.define('a.view.main.Main', {
         {
           xtype: 'mainList',
           listeners: {
-            edit : "onEditName"
+            edit: "onEditName"
           }
         }
       ]
@@ -85,23 +85,28 @@ Ext.define('a.view.main.Main', {
     {
       title: 'Home',
       iconCls: 'fa-home',
-      items: [{
-        xtype: 'mainBook'
-      }]
+      items: [
+        {
+          xtype: 'mainBook',
+          listeners: {
+            edit: "onEditName"
+          }
+        }
+      ]
     },
-    {
-      title: 'Groups',
-      iconCls: 'fa-users',
-      bind: {
-        html: '{loremIpsum}'
-      }
-    },
-    {
-      title: 'Settings',
-      iconCls: 'fa-cog',
-      bind: {
-        html: '{loremIpsum}'
-      }
-    }
+    // {
+    //   title: 'Groups',
+    //   iconCls: 'fa-users',
+    //   bind: {
+    //     html: '{loremIpsum}'
+    //   }
+    // },
+    // {
+    //   title: 'Settings',
+    //   iconCls: 'fa-cog',
+    //   bind: {
+    //     html: '{loremIpsum}'
+    //   }
+    // }
   ]
 });

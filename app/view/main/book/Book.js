@@ -13,7 +13,13 @@ Ext.define('a.view.main.book.Book', {
   defaults: {
     collapsible: true,
     split: true,
-    bodyPadding: 0
+    bodyPadding: 30
+  },
+
+  plugins: {
+    cellediting: {
+      clicksToEdit: 2
+    }
   },
 
   columns: [

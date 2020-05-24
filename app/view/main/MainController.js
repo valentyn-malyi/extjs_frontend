@@ -3,6 +3,9 @@ Ext.define('a.view.main.MainController', {
   alias: 'controller.main',
 
   onEditName: function (celling, operation) {
+    if (Ext.Object.isEmpty(operation.record.getChanges())) {
+      return
+    }
     operation.record.save(
       {
         success: (record, operation) => {
